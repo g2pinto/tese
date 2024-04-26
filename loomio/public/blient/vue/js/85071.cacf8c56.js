@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue"]=self["webpackChunkvue"]||[]).push([[85071],{85071:function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var u={lastWeek:"先週のeeeeのp",yesterday:"昨日のp",today:"今日のp",tomorrow:"明日のp",nextWeek:"翌週のeeeeのp",other:"P"},o=function(e,t,o,r){return u[e]},r=o;t["default"]=r,e.exports=t.default}}]);
+//# sourceMappingURL=85071.cacf8c56.js.map

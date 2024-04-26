@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue"]=self["webpackChunkvue"]||[]).push([[75440],{75440:function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var d={lastWeek:"'síðasta' dddd 'kl.' p",yesterday:"'í gær kl.' p",today:"'í dag kl.' p",tomorrow:"'á morgun kl.' p",nextWeek:"dddd 'kl.' p",other:"P"},u=function(e,t,u,a){return d[e]},a=u;t["default"]=a,e.exports=t.default}}]);
+//# sourceMappingURL=75440.b0ceb7d3.js.map

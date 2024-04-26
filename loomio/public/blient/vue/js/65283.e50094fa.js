@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue"]=self["webpackChunkvue"]||[]).push([[65283],{65283:function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var u={lastWeek:"'ўтган' eeee p 'да'",yesterday:"'кеча' p 'да'",today:"'бугун' p 'да'",tomorrow:"'эртага' p 'да'",nextWeek:"eeee p 'да'",other:"P"},o=function(e,t,o,r){return u[e]},r=o;t["default"]=r,e.exports=t.default}}]);
+//# sourceMappingURL=65283.e50094fa.js.map

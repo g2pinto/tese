@@ -1,0 +1,2 @@
+(self["webpackChunkvue"]=self["webpackChunkvue"]||[]).push([[6222],{6222:function(e){const n=[{br:{common:{action:{like:"Plijet on"}}}}];e.exports=n.length<=1?n[0]:n}}]);
+//# sourceMappingURL=6222.a4f8f776.js.map

@@ -1,0 +1,2 @@
+(self["webpackChunkvue"]=self["webpackChunkvue"]||[]).push([[89618],{89618:function(e){const n=[{ur_PK:{group_page:{options:{email_settings:"ایمیل ترجیحات"}}}}];e.exports=n.length<=1?n[0]:n}}]);
+//# sourceMappingURL=89618.939ea013.js.map

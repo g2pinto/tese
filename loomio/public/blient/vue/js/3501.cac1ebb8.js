@@ -1,0 +1,2 @@
+(self["webpackChunkvue"]=self["webpackChunkvue"]||[]).push([[3501],{3501:function(e){const o=[{pt_PT:{templates:{try_loomio:"Experimentar o Loomio"},current_plan_button:{upgrade:"Upgrade"},error_page:{forbidden:"Não tem permissão para o fazer."},discussion_form:{privacy_label:"Privacidade"},group_page:{options:{email_settings:"Preferências de Email"}}}}];e.exports=o.length<=1?o[0]:o}}]);
+//# sourceMappingURL=3501.cac1ebb8.js.map
