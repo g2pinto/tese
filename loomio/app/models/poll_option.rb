@@ -17,6 +17,7 @@ class PollOption < ApplicationRecord
       total_score: stance_choices.latest.sum(:score),
       voter_count: stances.latest.count
     )
+
   end
 
   def icon

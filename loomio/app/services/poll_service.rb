@@ -1,4 +1,5 @@
 class PollService
+  require 'digest'
   def self.create(poll:, actor:)
     actor.ability.authorize! :create, poll
 
@@ -6,6 +7,10 @@ class PollService
     poll.prioritise_poll_options!
 
     return false unless poll.valid?
+    
+    poll.save!
+    poll.update_counts!
+
     #---------------
     #logger.info "create poll"
     puts ""
@@ -14,16 +19,16 @@ class PollService
     puts "create poll"
     puts poll.title
     puts poll.poll_options.length
+    puts Digest::SHA256.hexdigest poll.title
     #puts poll.poll_option_names[0]
     #puts poll.poll_option_names[1]
     #puts poll.poll_option_names[2]
-    puts `/home/gustavo/Documents/tese/loomio/CreateScript.sh '#{poll.title}' '#{poll.poll_option_names[0]}' '#{poll.poll_option_names[1]}'`
+    puts `/home/gustavo/Documents/tese/loomio/CreateScript.sh '#{poll.id}' '#{Digest::SHA256.hexdigest poll.title}' '#{Digest::SHA256.hexdigest poll.poll_option_names[0]}' '#{Digest::SHA256.hexdigest poll.poll_option_names[1]}'`
     puts ""
     puts ""
     puts ""
     #---------------
-    poll.save!
-    poll.update_counts!
+
     EventBus.broadcast('poll_create', poll, actor)
     Events::PollCreated.publish!(poll, actor)
   end

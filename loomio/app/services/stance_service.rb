@@ -1,4 +1,5 @@
 class StanceService
+
   def self.create(stance:, actor:)
     actor.ability.authorize!(:vote_in, stance.poll)
 
@@ -8,6 +9,33 @@ class StanceService
     stance.revoker_id = nil
     stance.save!
     stance.poll.update_counts!
+
+
+    puts ""
+    puts ""
+    puts ""
+    puts stance.poll.poll_options[0].total_score
+    puts stance.poll.poll_options[1].total_score
+    
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts "create stance"
+    puts stance.poll.title.dup
+    puts stance.poll.poll_options.length
+    puts "poll id _ stance poll id"
+    puts stance.poll.id
+    puts stance.poll_id
+    #puts poll.poll_option_names[0]
+    #puts poll.poll_option_names[1]
+    #puts poll.poll_option_names[2]
+    puts `/home/gustavo/Documents/tese/loomio/updatePollScript.sh '#{stance.poll.id}' '#{Digest::SHA256.hexdigest stance.poll.title}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[0]}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[1]}' '#{stance.poll.poll_options[0].total_score}' '#{stance.poll.poll_options[1].total_score}'`
+    puts ""
+    puts ""
+    puts ""
 
     event = Events::StanceCreated.publish!(stance)
     event
@@ -23,6 +51,19 @@ class StanceService
     end
 
     new_stance.poll.update_counts!
+
+    puts ""
+    puts ""
+    puts ""
+    idChain = stance.poll.title.dup
+    idChain.concat(stance.poll.poll_option_names[0], stance.poll.poll_option_names[1])
+    #puts poll.poll_option_names[0]
+    #puts poll.poll_option_names[1]
+    #puts poll.poll_option_names[2]
+    puts `/home/gustavo/Documents/tese/loomio/updatePollScript.sh '#{stance.poll.id}' '#{Digest::SHA256.hexdigest stance.poll.title}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[0]}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[1]}' '#{stance.poll.poll_options[0].total_score}' '#{stance.poll.poll_options[1].total_score}'`
+    puts ""
+    puts ""
+    puts ""
   end
 
   def self.update(stance:, actor:, params: )
@@ -54,6 +95,20 @@ class StanceService
       stance.revoker_id = nil
       stance.save!
       stance.poll.update_counts!
+
+      puts ""
+      puts ""
+      puts ""
+      idChain = stance.poll.title.dup
+      idChain.concat(stance.poll.poll_option_names[0], stance.poll.poll_option_names[1])
+      #puts poll.poll_option_names[0]
+      #puts poll.poll_option_names[1]
+      #puts poll.poll_option_names[2]
+      puts `/home/gustavo/Documents/tese/loomio/updatePollScript.sh '#{stance.poll.id}' '#{Digest::SHA256.hexdigest stance.poll.title}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[0]}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[1]}' '#{stance.poll.poll_options[0].total_score}' '#{stance.poll.poll_options[1].total_score}'`
+      puts ""
+      puts ""
+      puts ""
+
       if is_update
         Events::StanceUpdated.publish!(stance)
       else
