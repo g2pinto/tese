@@ -14,10 +14,8 @@ class StanceService
     puts ""
     puts ""
     puts ""
-    puts stance.poll.poll_options[0].total_score
-    puts stance.poll.poll_options[1].total_score
-    
     puts ""
+    puts "trying to find stance choice name"
     puts ""
     puts ""
     puts ""
@@ -29,10 +27,11 @@ class StanceService
     puts "poll id _ stance poll id"
     puts stance.poll.id
     puts stance.poll_id
+    #puts option
     #puts poll.poll_option_names[0]
     #puts poll.poll_option_names[1]
     #puts poll.poll_option_names[2]
-    puts `/home/gustavo/Documents/tese/loomio/updatePollScript.sh '#{stance.poll.id}' '#{Digest::SHA256.hexdigest stance.poll.title}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[0]}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[1]}' '#{stance.poll.poll_options[0].total_score}' '#{stance.poll.poll_options[1].total_score}'`
+    puts `/home/gustavo/Documents/tese/loomio/VotePollScript.sh '#{stance.poll.id}' '#{Digest::SHA256.hexdigest stance.stance_choices[0].poll_option.name}'`
     puts ""
     puts ""
     puts ""
@@ -60,7 +59,7 @@ class StanceService
     #puts poll.poll_option_names[0]
     #puts poll.poll_option_names[1]
     #puts poll.poll_option_names[2]
-    puts `/home/gustavo/Documents/tese/loomio/updatePollScript.sh '#{stance.poll.id}' '#{Digest::SHA256.hexdigest stance.poll.title}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[0]}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[1]}' '#{stance.poll.poll_options[0].total_score}' '#{stance.poll.poll_options[1].total_score}'`
+    #puts `/home/gustavo/Documents/tese/loomio/updatePollScript.sh '#{stance.poll.id}' '#{Digest::SHA256.hexdigest stance.poll.title}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[0]}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[1]}' '#{stance.poll.poll_options[0].total_score}' '#{stance.poll.poll_options[1].total_score}'`
     puts ""
     puts ""
     puts ""
@@ -99,12 +98,14 @@ class StanceService
       puts ""
       puts ""
       puts ""
-      idChain = stance.poll.title.dup
-      idChain.concat(stance.poll.poll_option_names[0], stance.poll.poll_option_names[1])
+      puts "trying to find stance choice name"
+      ##puts stance.choice()
+      puts stance.stance_choices
+      puts stance.stance_choices[0]
       #puts poll.poll_option_names[0]
       #puts poll.poll_option_names[1]
       #puts poll.poll_option_names[2]
-      puts `/home/gustavo/Documents/tese/loomio/updatePollScript.sh '#{stance.poll.id}' '#{Digest::SHA256.hexdigest stance.poll.title}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[0]}' '#{Digest::SHA256.hexdigest stance.poll.poll_option_names[1]}' '#{stance.poll.poll_options[0].total_score}' '#{stance.poll.poll_options[1].total_score}'`
+      #puts `/home/gustavo/Documents/tese/loomio/VotePollScript.sh '#{stance.poll.id}' '#{Digest::SHA256.hexdigest stance.stance_choices[0].poll_option.name}'`
       puts ""
       puts ""
       puts ""

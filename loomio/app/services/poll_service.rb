@@ -20,10 +20,22 @@ class PollService
     puts poll.title
     puts poll.poll_options.length
     puts Digest::SHA256.hexdigest poll.title
+    options_string = "["
+    voting_string = "["
+    options_string.concat(Digest::SHA256.hexdigest(poll.poll_option_names[0]))
+    voting_string.concat("0")
+    for i in 1..poll.poll_option_names.length-1 do
+      options_string.concat(",",Digest::SHA256.hexdigest(poll.poll_option_names[i]))
+      voting_string.concat(",0")
+    end  
+    options_string.concat("]")
+    voting_string.concat("]")
+    puts options_string
+    puts voting_string
     #puts poll.poll_option_names[0]
     #puts poll.poll_option_names[1]
     #puts poll.poll_option_names[2]
-    puts `/home/gustavo/Documents/tese/loomio/CreateScript.sh '#{poll.id}' '#{Digest::SHA256.hexdigest poll.title}' '#{Digest::SHA256.hexdigest poll.poll_option_names[0]}' '#{Digest::SHA256.hexdigest poll.poll_option_names[1]}'`
+    puts `/home/gustavo/Documents/tese/loomio/CreateScript.sh '#{poll.id}' '#{Digest::SHA256.hexdigest poll.title}' '#{options_string}' '#{voting_string}'`
     puts ""
     puts ""
     puts ""
