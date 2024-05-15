@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Query for poll</h1>
+
+    <form action = "" method = "post"> 
+        {% csrf_token %} 
+        <b>{{ form.asset.label_tag }}</b> {{ form.asset}} <br><br>
+        <b>{{ form.title.label_tag }}</b> {{ form.title }} <br><br>
+        <input type="submit" value=Submit> 
+    </form> 
+    
+</body>
+</html>
