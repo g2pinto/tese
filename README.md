@@ -20,7 +20,8 @@ An in-depth paragraph about your project and overview of use.
 
 ### Installing
 
-* The smart-contract chaincode needs to be installed in the blockchain network.
+* A blockchain network is required to be started on a server with access to all parts of the project.
+* The smart-contract chaincode (in [chaincode-go-remade](https://github.com/g2pinto/tese/tree/master/chaincode/chaincode-go-remade))needs to be installed in the blockchain network.
 
 ### Executing program
 
@@ -47,7 +48,10 @@ $ python3 manage.py runserver
 ## Authors
 
 Gustavo Pinto
+
 David R. Matos
+
+Mariana Pestana
 
 ## Acknowledgments
 
