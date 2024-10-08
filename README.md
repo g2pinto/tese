@@ -1,27 +1,56 @@
+# EarthlyConsensus System
+
+In this repository is the EarthlyConsensus developed in the context of the thesis to obtain the masters degree in  Computer Science and Engineering, for Instituto Superior Técnico.
+
+## Description
+
+An in-depth paragraph about your project and overview of use.
+
+## Getting Started
+
+### Dependencies
+
+* Hyperledger Fabric
+* Ollama's Llama3
+* Golang
+* Ruby
+* Npm
+* Python3
+* Django
+
+### Installing
+
+* The smart-contract chaincode needs to be installed in the blockchain network.
+
+### Executing program
+
+* First it is necessary to start the blockchain network using couchDb. On this project the test-network was used, for which the command is simply:
 ```
-cd loomio
-
-rails s
+$ .\network.sh up -s couchdb
+```
+* Next, Loomio server needs to be started, for that:
+```
+$ cd looomio
+$ rails s
+```
+And in another terminal
+```
+$ cd loomio/vue
+$ npm run serve
+```
+* After this, you are ready to start the chainserver (EcoMonitor).
+```
+$ cd chainserver
+$ python3 manage.py runserver
 ```
 
-###### new terminal
-```
-cd vue
+## Authors
 
-npm run serve
-```
+Gustavo Pinto
+David R. Matos
 
+## Acknowledgments
 
-The measured pH level of the sea near the city was 6.9. Make a 5 line text of this information in a way which unexperienced individuals understand whether the value is high or low compared to the average pH levels of the sea.
-
-The measured carbon level of the air near the city was 2100ppm. Make a 5 line text of this information in a way which unexperienced individuals understand whether the value is high or low compared to the average carbon levels of the air. Present just the text without any introduction and no double quotes.
-
-curl -X POST http://localhost:11434/api/generate -d '{
-  "model": "llama3",
-  "prompt":"The measured carbon level of the air near the city was 2100ppm. Make a 5 line text of this information in a way which unexperienced individuals understand whether the value is high or low compared to the average carbon levels of the air. Present just the text without any introduction and no double quotes.",
-  "stream": false
- }'
- 
- 
- 
- The $TITLE\_INFO was $MEASURE\_VALUE. Make a 5 line text of this information in a way which unexperienced individuals understand whether the value is high or low compared to the average $TITLE\_INFO. Present just the text without any introduction and no double quotes.
+Inspiration, code snippets, etc.
+* [Loomio](https://github.com/loomio/loomio)
+* [Hyperledger Fabric](https://github.com/hyperledger/fabric)
